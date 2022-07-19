@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Image from '../node_modules/next/image'
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
 
 import classNames from 'classnames/bind'
 import styles from '../styles/Home.module.css'
@@ -30,6 +31,7 @@ function randomChoice(idx: number): number {
 
 export default function Home() {
   const [idx, setIdx] = useState<number>(2)
+  const [openSchedule, setOpenSchedule] = useState<boolean>(false)
 
   useEffect(() => {
     setIdx(randomChoice(idx))
@@ -37,10 +39,23 @@ export default function Home() {
 
   return (
     <div className={cx('main-container')}>
+      <div className={cx('schedule', openSchedule ? 'open' : 'close')}>
+        <Image src="/일정.png" width={574} height={730} />
+        <button className={cx('close-schedule-btn')} onClick={() => setOpenSchedule(false)}>
+          <IoIosArrowUp />
+          <p>닫기</p>
+        </button>
+      </div>
+      <button className={cx('open-schedule-btn')} onClick={() => setOpenSchedule(true)}>
+        <IoIosArrowDown />
+        <p>일정 보기</p>
+      </button>
       <h1>Begin Again</h1>
       <Image src="/로고.png" width={50} height={50} quality={100} />
       <div className={cx('question')} dangerouslySetInnerHTML={{ __html: questions[idx] }} />
-      <button onClick={() => setIdx(randomChoice(idx))}>다시 생성</button>
+      <button className={cx('reload-btn')} onClick={() => setIdx(randomChoice(idx))}>
+        다시 생성
+      </button>
     </div>
   )
 }
