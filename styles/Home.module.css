@@ -42,6 +42,9 @@
     margin-bottom: 20px;
     font-size: 16px;
     font-family: 'MaruBuri';
+    b {
+      color: #0097cc;
+    }
   }
   .reload-btn {
     padding: 13px;
