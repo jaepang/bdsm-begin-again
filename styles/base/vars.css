@@ -1,0 +1,34 @@
+/* 기본 속성 */
+:root {
+  --color-light: #ffffff;
+  --color-light-dimmed: rgb(242, 243, 247);
+  --color-dark: #1a1b1e;
+  --color-dark-dimmed: #2b2c31;
+
+  --color-text-black: rgba(0, 0, 0, 1);
+  --color-text-black-dimmed: rgba(0, 0, 0, 0.4);
+  --color-text-white: rgba(255, 255, 255, 1);
+  --color-text-white-dimmed: rgba(255, 255, 255, 0.4);
+}
+
+/* 테마 속성 */
+:root {
+  --color-bg-primary: var(--color-light-dimmed);
+  --color-bg-secondary: var(--color-light);
+  --color-text-default: var(--color-text-black);
+  --color-text-dimmed: var(--color-text-black-dimmed);
+
+  .theme-dark {
+    --color-bg-primary: var(--color-dark);
+    --color-bg-secondary: var(--color-dark-dimmed);
+    --color-text-default: var(--color-text-white);
+    --color-text-dimmed: var(--color-text-white-dimmed);
+  }
+}
+
+/* 고정 속성 */
+:root {
+  --color-bg-header: var(--color-dark);
+  --color-text-header: var(--color-text-white);
+  --color-text-header-dimmed: var(--color-text-white-dimmed);
+}

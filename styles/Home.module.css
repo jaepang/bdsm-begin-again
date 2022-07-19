@@ -1,0 +1,31 @@
+.main-container {
+  height: 100%;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  h1 {
+    margin-bottom: 15px;
+    font-size: 44px;
+    font-family: 'MaruBuriBold';
+  }
+  h2 {
+    margin-top: 35px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-family: 'MaruBuri';
+  }
+  button {
+    font-family: 'MaruBuri';
+    padding: 13px;
+    border-radius: 5px;
+    color: white;
+    background-color: #0097cc;
+    &:hover,
+    &:active {
+      background-color: #007799;
+    }
+  }
+}
